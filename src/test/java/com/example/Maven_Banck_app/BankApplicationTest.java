@@ -21,7 +21,8 @@ public class BankApplicationTest {
     @DisplayName("Successful deposit increases account balance")
     public void testSuccessfulDeposit() {
         account.deposit(500.00);
-        assertEquals(1500.00, account.getBalance(), 0.001);
+        // Intentional failure: 1000 + 500 is 1500.00, not 9999.00
+        assertEquals(9999.00, account.getBalance(), 0.001);
     }
 
     @Test
